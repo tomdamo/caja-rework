@@ -11,6 +11,8 @@ import {
 } from '@littlesticks/odyssey-theme-components';
 import Layout from '../../../layouts/Page.astro';
 import TextAndImageHero from '../../../components/sections/heros/TextAndImageHero.astro';
+import HeroSection from './HeroSection.astro';
+import TextSectionHome from './textSectionHome.astro';
 
 const seo = {
 	title: 'Landing Page #1 | Astro Odyssey Theme',
@@ -18,7 +20,7 @@ const seo = {
 };
 ---
 
-	<TextAndImageHero reversed>
+	<HeroSection>
 		<picture slot="image-container">
 			<img
 				src="/assets/images/landing-1/landing-hero-1.jpg"
@@ -26,84 +28,18 @@ const seo = {
 				id="home-hero-image"
 			/>
 		</picture>
-	</TextAndImageHero>
+	</HeroSection>
 
-	<CustomerQuoteSection
-		quoteText="Lorem ipsum dolor sit amet consectetur adipisicing elit. Laborum, vero nobis? Voluptas assumenda, voluptatibus commodi qui ducimus delectus praesentium maiores, impedit iure labore ratione, ea facilis numquam doloremque aperiam aspernatur."
-		customerName="Happy Customer"
-	/>
-
-	<ThreeColumnTextSection>
-		<div slot="column-1-body">
-			<h2>Why?</h2>
-			<p>
-				Lorem ipsum dolor sit amet consectetur adipisicing elit. Est dolorem
-				tempore odio! Nemo consectetur ipsa aperiam similique maxime maiores
-				consequatur explicabo ut quibusdam fugiat corporis, dignissimos tenetur,
-				mollitia cumque. Velit. HIER KUNNEN FOTOS
-			</p>
+	<TextSectionHome>
+		<div slot="text-container">
+		  <p>
+	Through clever interventions, Caja Boogers manages to influence the viewer's gaze. Take, for example, the canvases close together, which suggests the opening of an elevator door. Boogers did not paint the doors but let the idea of the doors arise in this way. This characterizes his way of working, in which he constantly explores the tension between various materials and layers in a painting.
+	<br><br>
+	Apart from paint, his canvases are characterized by scratches, which he applies on the surface before the paint. By working not only with brush and paint, the texture of the subject is intensified. As a viewer, this makes you look no longer just at the depicted image on the canvas, but at the surface as an entire object. In his series of elevators, his paintings balance between abstraction and figuration. The doors of an elevator are indeed an elevator, but also two panels of metal, catching light, or even something else. Boogers’ work reveals an engaging play, shifting you around between the painted and the unpainted.
+	<br><br>
+	Text: Hagar Schuringa
+		  </p>
 		</div>
-		<Button slot="column-1-cta">Learn More</Button>
-		<div slot="column-2-body">
-			<h2>How?</h2>
-			<p>
-				Lorem ipsum dolor sit amet consectetur adipisicing elit. Est dolorem
-				tempore odio! Nemo consectetur ipsa aperiam similique maxime maiores
-				consequatur explicabo ut quibusdam fugiat corporis, dignissimos tenetur,
-				mollitia cumque. Velit.
-			</p>
-		</div>
-		<Button slot="column-2-cta" outlined>Learn More</Button>
-		<div slot="column-3-body">
-			<h2>What?</h2>
-			<p>
-				Lorem ipsum dolor sit amet consectetur adipisicing elit. Est dolorem
-				tempore odio! Nemo consectetur ipsa aperiam similique maxime maiores
-				consequatur explicabo ut quibusdam fugiat corporis, dignissimos tenetur,
-				mollitia cumque. Velit.
-			</p>
-		</div>
-		<Button slot="column-3-cta">Learn More</Button>
-	</ThreeColumnTextSection>
+	  </TextSectionHome>
 
-	<YouTubeEmbedSection url="https://www.youtube.com/watch?v=cbYr75_R15M" rounded />
-
-  <StickyTextImageSection>
-    <div slot="text-container">
-      <h2>Features</h2>
-      <h3>SEO</h3>
-      <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Est dolorem
-        tempore odio! Nemo consectetur ipsa aperiam similique maxime maiores
-        consequatur explicabo ut quibusdam fugiat corporis, dignissimos tenetur,
-        mollitia cumque. Velit.
-      </p>
-      <h3>Responsive</h3>
-        <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Est dolorem
-        tempore odio! Nemo consectetur ipsa aperiam similique maxime maiores
-        consequatur explicabo ut quibusdam fugiat corporis, dignissimos tenetur,
-        mollitia cumque. Velit.
-      </p>
-      <h3>Themeable</h3>
-        <p>
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Est dolorem
-        tempore odio! Nemo consectetur ipsa aperiam similique maxime maiores
-        consequatur explicabo ut quibusdam fugiat corporis, dignissimos tenetur,
-        mollitia cumque. Velit.
-      </p>
-    </div>
-     <picture slot="image-container">
-      <img
-        src="/assets/images/landing-1/landing-sticky.jpg"
-        alt="Astro Odyssey"
-        loading="lazy"
-      />
-    </picture>
-  </StickyTextImageSection>
-
-  <CtaCardSection background="var(--theme-surface-2)" color="var(--theme-on-surface-2)">
-    <h2>Start Your Website Today</h2>
-    <p>It only takes a couple clicks to have a new, modern website for your business or startup.</p>
-  </CtaCardSection>
 

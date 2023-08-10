@@ -1,10 +1,11 @@
 ---
 import { Container } from '@littlesticks/odyssey-theme-components';
 ---
+
 <Container>
 	<section class="hero-section__section">
-		<div class="hero-section__image">
-			<slot name="image-container">
+		<div class="hero-section__text">
+			<slot name="text-container">
 			</slot>
 		</div>
 	</section>
@@ -17,7 +18,7 @@ import { Container } from '@littlesticks/odyssey-theme-components';
 		display: grid;
 		place-items: center;
 	}
-	.hero-section__image :global(img) {
+	.hero-section__text :global(img) {
 		width: 100%;
 		height: 100%;
 		max-height: 80vh;

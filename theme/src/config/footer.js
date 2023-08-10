@@ -23,14 +23,14 @@ export const footerSocials = [
 
 export const footerLists = [
 	{
-		title: 'Company',
+		title: '',
 		items: [
 			{
-				title: 'About',
+				title: 'Work',
 				slug: '/company/about',
 			},
 			{
-				title: 'Portfolio',
+				title: 'CV',
 				slug: '/blog',
 			},
 			{

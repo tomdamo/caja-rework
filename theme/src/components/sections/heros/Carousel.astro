@@ -1,0 +1,121 @@
+<div class="carousel">
+    <button class="carousel__button carousel__button--left is-hidden" aria-label="Go to previous slide">
+        <i class="fas fa-chevron-left">&#8592;</i>
+    </button>
+<button class="carousel__button carousel__button--right" aria-label="Go to next slide">
+        <i class="fas fa-chevron-right">&#8594;</i>
+    </button>
+    <ul>
+        <li class="slide" data-active>
+            <img src="/assets/img/homepage-breed/IMG_0569.jpeg" alt="image 1">
+        </li>
+        <li class="slide">
+            <img src="/assets/img/homepage-breed/IMG_0573.jpeg" alt="image 2">
+        </li>
+        <li class="slide">
+            <img src="/assets/img/homepage-breed/IMG_1098.jpeg" alt="image 3">
+        </li>
+        <li class="slide">
+            <img src="/assets/img/homepage-breed/IMG_9250.jpeg" alt="image 4">
+        </li>
+        <li class="slide">
+            <img src="/assets/img/homepage-breed/IMG_9253.jpeg" alt="image 5">
+        </li>
+    </ul>
+</div>
+
+<style>
+
+    *, *:before, *:after {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin:0; 
+    }
+    .carousel {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+    }
+    .slide {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        transition: opacity 0.5s ease-in-out;
+    }
+    .slide > img {
+        width: 100%;
+        height: 100vh;
+        object-fit: cover;
+        object-position: center;
+    }
+    .slide [data-active] {
+        opacity: 1;
+    }
+    .carousel__button {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.5);
+        border: none;
+        cursor: pointer;
+        transition: background-color 0.3s ease-in-out;
+    }
+    .carousel__button:hover {
+        background-color: rgba(255, 255, 255, 0.8);
+    }
+    .carousel__button:focus {
+        outline: none;
+    }
+
+</style>
+
+<script is:inline>
+    import { onMount } from '@astro/types';
+
+    onMount(() => {
+      const carousel = document.querySelector('.carousel');
+      const slides = [...carousel.querySelectorAll('.slide')];
+      const leftButton = carousel.querySelector('.carousel__button--left');
+      const rightButton = carousel.querySelector('.carousel__button--right');
+      let activeSlide = 0;
+
+      function showSlide(index) {
+        slides.forEach((slide, i) => {
+          if (i === index) {
+            slide.setAttribute('data-active', '');
+          } else {
+            slide.removeAttribute('data-active');
+          }
+        });
+      }
+
+      function showNextSlide() {
+        activeSlide++;
+        if (activeSlide > slides.length - 1) {
+          activeSlide = 0;
+        }
+        showSlide(activeSlide);
+      }
+
+      function showPreviousSlide() {
+        activeSlide--;
+        if (activeSlide < 0) {
+          activeSlide = slides.length - 1;
+        }
+        showSlide(activeSlide);
+      }
+
+      leftButton.addEventListener('click', showPreviousSlide);
+      rightButton.addEventListener('click', showNextSlide);
+
+      showSlide(activeSlide);
+    });
+  </script>
